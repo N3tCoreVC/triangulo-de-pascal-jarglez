@@ -1,0 +1,11 @@
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\obj\Debug\netcoreapp2.1\TrianguloPascal.csprojAssemblyReference.cache
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\obj\Debug\netcoreapp2.1\TrianguloPascal.csproj.CoreCompileInputs.cache
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\obj\Debug\netcoreapp2.1\TrianguloPascal.AssemblyInfoInputs.cache
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\obj\Debug\netcoreapp2.1\TrianguloPascal.AssemblyInfo.cs
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\bin\Debug\netcoreapp2.1\TrianguloPascal.deps.json
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\bin\Debug\netcoreapp2.1\TrianguloPascal.runtimeconfig.json
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\bin\Debug\netcoreapp2.1\TrianguloPascal.runtimeconfig.dev.json
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\bin\Debug\netcoreapp2.1\TrianguloPascal.dll
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\bin\Debug\netcoreapp2.1\TrianguloPascal.pdb
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\obj\Debug\netcoreapp2.1\TrianguloPascal.dll
+C:\Users\carlos\DriveGoogleRedlab\proyectoCsharp\triangulo-de-pascal-jarglez\obj\Debug\netcoreapp2.1\TrianguloPascal.pdb
