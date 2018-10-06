@@ -10,7 +10,7 @@ namespace TrianguloPascal
         public Program(int baseTriangulo){
             this.baseTriangulo = baseTriangulo;
             this.trianguloPascalNumeros = creaArreglo(this.baseTriangulo);
-            imprimir(generaString(this.trianguloPascalNumeros));
+            imprimirCentrado(generaString(this.trianguloPascalNumeros));
         }
 
         private int[,] creaArreglo(int baseTriangulo) {
@@ -41,38 +41,54 @@ namespace TrianguloPascal
 
         private string[] generaString(int[,] arreglo) {
             string cadena;
+            int maximo = getEspaciosMaximosIndentado(arreglo);
+            int lonNum = 0;
             string[] respuesta = new string[arreglo.GetLength(1)];
             for (int y = 0; y < arreglo.GetLength(1); y++) {
                 cadena = "";                
                 for (int x = 0; x < arreglo.GetLength(0); x++ ){
-                    if (arreglo[x,y] > 0 && x < y) {
-                        cadena += arreglo[x,y] + " ";
-                    } else if (arreglo[x,y] > 0) {
-                        cadena += arreglo[x,y];
-                    }
+                    if (arreglo[x,y] > 0) {
+                        lonNum = arreglo[x,y].ToString().Length;
+                        lonNum = maximo - lonNum;
+                        if (lonNum%2 > 0) {
+                            cadena += repiteEspacios(lonNum/2) + arreglo[x,y] 
+                                    + repiteEspacios(lonNum+1/2);
+                        } else { 
+                            cadena += repiteEspacios(lonNum/2) + arreglo[x,y] 
+                                    + repiteEspacios(lonNum/2);
+                        }                         
+                        cadena += new string(' ', maximo);
+                    } 
                 }
                 respuesta[y] = cadena;
             }
             return respuesta;
         }
 
-        private string repiteEspacios(int num) {
-            string respuesta = "";
-            for (int rep = 0; rep < num; rep++) {
-                respuesta += " ";
-            }
-            return respuesta;
+        private int getEspaciosMaximosIndentado(int[,] arreglo) {
+            int dimensionX = arreglo.GetLength(0)-1;
+            int dimensionY = arreglo.GetLength(1)-1;
+            if (dimensionX%2 > 0) {
+                 dimensionX = (dimensionX/2)+1;
+            } else dimensionX = dimensionX/2;;
+            return arreglo[dimensionX,dimensionY].ToString().Length;
         }
 
-        private void imprimir(string[] lineas) {
+        private string repiteEspacios(int num) {
+            return new string(' ', num);
+        }
+
+        private void imprimirCentrado(string[] lineas) {
             int anchoMaximo = lineas[lineas.Length-1].Length;
             int espacios = anchoMaximo/2;
-            for (int i = 0; i < lineas.Length; i++) {              
-                if (i > 0) {
-                    espacios = espacios - ((lineas[i].Length 
-                               - lineas[i-1].Length)/2);
-                }                     
-                Console.WriteLine(repiteEspacios(espacios) + lineas[i]);
+            int tamanoMaximoPantalla = Console.WindowWidth;
+            string imprimible = "";
+            for (int i = 0; i < lineas.Length; i++) {
+                imprimible = repiteEspacios(espacios - (lineas[i].Length/2)) 
+                            + lineas[i];
+                if (imprimible.Length > tamanoMaximoPantalla) 
+                    throw new Exception();
+                Console.WriteLine(imprimible);
             }          
         }
 
@@ -96,7 +112,8 @@ namespace TrianguloPascal
             } catch (Exception) {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Lo siento debe de ser un número entero y " 
-                                    + "mayor a uno. Intenta para la próxima" + 
+                                    + "mayor a uno. O el triángulo es demasiado" 
+                                    + " grande Intenta para la próxima" + 
                                     "...");
                 Console.ResetColor();
             }
